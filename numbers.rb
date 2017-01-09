@@ -3,7 +3,9 @@
 year= 365*24*60*60
 puts year
 
-# exercicsur les nombres: calcul de l'age en secondes
+# exercice sur les nombres: calcul de l'age en secondes
 
-age= 36*year
+time1= Time.new ("31/05/1975")
+time2= Time.now
+age= time2 - time1
 puts age
