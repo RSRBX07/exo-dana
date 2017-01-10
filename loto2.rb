@@ -7,4 +7,3 @@ else
   cagnote= 100_1000
 end
 puts "le montant de la cagnote du jour est de : #{cagnote}"
- 
