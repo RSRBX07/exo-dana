@@ -1,21 +1,24 @@
 # donner les resultats d'un tirage d'un dé à 6 faces
 
 def roll_value 
-    dice=[1,2,3,4,5,6]
-    dice_number= dice[rand 6]
-    return dice_number
+    faces=[1,2,3,4,5,6]
+    faces[rand 6]
 end
 
-puts roll_value
-
-# deux méthodes poue dice pipé ou pas
+# deux méthodes pour dice pipé ou pas
 
 def roll_values (cheated_value = nil)
-    cheated_value = 4
-    roll_value
+    # si cheated value n'est pas nil donc de normapipe'
+    if cheated_value != nil
+        cheated_value
+    else
+        roll_value
+    end
+    # s cheated value est nil de normal
 end
 
+puts "tirage de normal"
 puts roll_values 
-
-
+puts "tirage de pipe a deux"
+puts roll_values 2
 
