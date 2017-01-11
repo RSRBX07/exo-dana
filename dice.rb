@@ -2,9 +2,8 @@
 
 def roll_value 
     dice=[1,2,3,4,5,6]
-    dice_index= rand 6
-    roll= dice [dice_index]
-    returns roll
+    dice_number= dice[rand 6]
+    return dice_number
 end
 
 puts roll_value
