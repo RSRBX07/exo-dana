@@ -7,6 +7,10 @@ rand5= Random.rand(1..45)
 
 puts rand1, rand2, rand3, rand4, rand5
 
+puts "blabla"
+balabla = gets
+puts "bvnhngh #{balabla} ghnknhknhnh"
+
 
 
 
