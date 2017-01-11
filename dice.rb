@@ -10,12 +10,12 @@ puts roll_value
 
 # deux méthodes poue dice pipé ou pas
 
-def roll-value2(cheated_value = nil)
-    cheated_value=4
+def roll_values (cheated_value = nil)
+    cheated_value = 4
     roll_value
 end
 
-puts roll_value2 
+puts roll_values 
 
 
 
