@@ -11,3 +11,5 @@ codes_postaux ={
 puts "Quelle est votre ville ?"
 ville = gets.chomp.to_sym
 puts "Votre code postal est #{codes_postaux[ville]}"
+
+# tedsting sourcetree
