@@ -1,3 +1,12 @@
+
+meta={
+    name => Dana,
+    place => Lille,
+    message => Hi
+}
+
+puts "#{name} from #{place} says #{message}"
+
 # donner les resultats d'un tirage d'un dé à 6 faces
 
 def roll_value 
@@ -12,7 +21,7 @@ def roll_values (cheated_value = nil)
     if cheated_value != nil
         cheated_value
     else
-        roll_value
+         roll_value
     end
     # s cheated value est nil de normal
 end
