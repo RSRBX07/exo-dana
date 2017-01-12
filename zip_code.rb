@@ -1,7 +1,7 @@
 codes_postaux ={
-    'Lille' => 59000,
-    'Roubaix' => 59100,
-    'Paris' => 75000
+    lille: 59000,
+    roubaix: 59100,
+    paris: 75000
 }
 
 # Lille = codes_postaux['Lille']
@@ -9,5 +9,5 @@ codes_postaux ={
 # Paris= codes_postaux['Paris']
 
 puts "Quelle est votre ville ?"
-ville = gets.chomp
+ville = gets.chomp.to_sym
 puts "Votre code postal est #{codes_postaux[ville]}"
