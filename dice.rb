@@ -1,11 +1,18 @@
 
 meta={
-    name => Dana,
-    place => Lille,
-    message => Hi
+    'name' => 'Dana',
+    'place' => 'Lille',
+    'message' => 'Hi',
+    'number'=> 2,
+
 }
 
-puts "#{name} from #{place} says #{message}"
+toto = meta['name']
+tata= meta['place']
+titi= meta['message']
+to= meta['number']
+
+puts "#{toto} from #{tata} says #{titi} #{to} you"
 
 # donner les resultats d'un tirage d'un dé à 6 faces
 
@@ -28,6 +35,6 @@ end
 
 puts "tirage de normal"
 puts roll_values 
-puts "tirage de pipe a deux"
+puts "tirage dé pipé à deux"
 puts roll_values 2
 
