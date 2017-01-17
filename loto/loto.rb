@@ -1,6 +1,14 @@
-require 'date'
-class Loto
 
+  require 'date'
+  class Loto
+    attr_reader :picked_balls
+    attr_reader :saved_grids
+
+  def initialize
+    puts "on initialise une instance de loto"
+    @picked_balls = []
+  end
+  
    def self.get_grid
      grid = []
      5.times do
@@ -10,15 +18,7 @@ class Loto
      grid
    end
 
-   def draw
-    available_balls = (1..45).to_a
-    # shuffle balls and take 5
-    @picked_balls ||= available_balls.shuffle.take(5)
-    #@picked_balls = @picked_balls || available_balls.shuffle.take(5)
-
-    puts "Le tirage du jour est : #{@picked_balls.sort}" 
-    @picked_balls
-  end
+   
 
   def check_grid grid
     # afficher si gagne ou perdu
@@ -31,7 +31,7 @@ class Loto
  
   def grid_check grid
     #verifier que le tirage n'a pas encore eu lieu
-     if  @picked_balls.to_a.empty?
+     if  @picked_balls.empty?
         @saved_grids ||= []
        #@saved_grids = @saved_grids || []
         @saved_grids.push grid
@@ -50,7 +50,17 @@ class Loto
   end
 
 
-  private 
+  private
+
+  def draw
+    available_balls = (1..45).to_a
+    # shuffle balls and take 5
+    @picked_balls = available_balls.shuffle.take(5)
+    #@picked_balls = @picked_balls || available_balls.shuffle.take(5)
+
+    puts "Le tirage du jour est : #{@picked_balls.sort}" 
+    @picked_balls
+  end
 
   def vendredi_13?
     Date.today.day == 13 && Date.today.friday?
