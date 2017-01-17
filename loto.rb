@@ -1,16 +1,77 @@
-# affiche le tirage loto de 5 valeurs comprises entre 1 et 45
-rand1= Random.rand(1..45)
-rand2= Random.rand(1..45)
-rand3= Random.rand(1..45)
-rand4= Random.rand(1..45)
-rand5= Random.rand(1..45)
+require 'date'
+class Loto
 
-puts rand1, rand2, rand3, rand4, rand5
+   def self.get_grid
+     grid = []
+     5.times do
+       input = gets.to_i
+       grid << input
+     end
+     grid
+   end
 
-puts "blabla"
-balabla = gets
-puts "bvnhngh #{balabla} ghnknhknhnh"
+   def draw
+    available_balls = (1..45).to_a
+    # shuffle balls and take 5
+    @picked_balls ||= available_balls.shuffle.take(5)
+    #@picked_balls = @picked_balls || available_balls.shuffle.take(5)
 
+    puts "Le tirage du jour est : #{@picked_balls.sort}" 
+    @picked_balls
+  end
+
+  def check_grid grid
+    # afficher si gagne ou perdu
+    if grid.sort == draw.sort
+      puts "You win !"
+    else
+      puts "You loose !"
+    end
+  end
+ 
+  def grid_check grid
+    #verifier que le tirage n'a pas encore eu lieu
+     if  @picked_balls.to_a.empty?
+        @saved_grids ||= []
+       #@saved_grids = @saved_grids || []
+        @saved_grids.push grid
+     end 
+  end
+
+
+  def has_winner?
+    #comprer tous les bulletins valides avec la grille gagnante
+    sorted_draw = draw.sort
+    @saved_grids.each do |grid|
+      sorted_grid = grid.sort
+      return true if sorted_grid == sorted_draw
+    end
+    return false
+  end
+
+
+  private 
+
+  def vendredi_13?
+    Date.today.day == 13 && Date.today.friday?
+  end
+
+  
+
+  def prize
+    cagnote = if vendredi_13?
+        2_000_000
+      else
+        100_000
+      end
+    cagnote
+  end
+
+  def self.get_flash
+  (1..45).to_a.shuffle.take 5
+  end
+  
+end
 
 
 
