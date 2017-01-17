@@ -7,6 +7,9 @@ require './loto.rb'
 #.each { |grid| loto_du_samedi.check_grid grid }
 
 loto_du_lundi = Loto.new
+puts loto_du_lundi.picked_balls.inspect
+puts loto_du_lundi.saved_grids.inspect
+
 loto_du_lundi.check_grid Loto.get_grid
 #loto_du_lundi.check_grid(grid)
 if loto_du_lundi.has_winner?
