@@ -12,7 +12,7 @@ RSpec.describe Loto do
     expect(Loto.get_flash).not_to eql Loto.get_flash
   end
 
-  it 'make a draw' do
+  xit 'make a draw' do
     loto = Loto.new
     loto_draw = loto.draw
     expect(loto).to respond_to :draw
@@ -21,7 +21,7 @@ RSpec.describe Loto do
     expect(loto_draw.size).to equal 5
     expect(loto_draw).to eql loto.draw
   end
-  it 'validate a grid register this grid' do
+  xit 'validate a grid register this grid' do
      loto = Loto.new
      grid = [1,2,3,4,5]
      validated_grids = loto.grid_check grid

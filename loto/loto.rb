@@ -50,8 +50,6 @@
   end
 
 
-  private
-
   def draw
     available_balls = (1..45).to_a
     # shuffle balls and take 5
@@ -61,6 +59,8 @@
     puts "Le tirage du jour est : #{@picked_balls.sort}" 
     @picked_balls
   end
+
+ private
 
   def vendredi_13?
     Date.today.day == 13 && Date.today.friday?
