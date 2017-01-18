@@ -24,7 +24,7 @@ RSpec.describe Loto do
   it 'validate a grid register this grid' do
      loto = Loto.new
      grid = [1,2,3,4,5]
-     validated_grids = loto.validate_grid grid
+     validated_grids = loto.grid_check grid
      expect(validated_grids).to include grid
   end
   it 'reject grid validation after draw'
