@@ -6,12 +6,13 @@ class Counter
     end
   end
 
-  # def add_one 
-  #   @new_val= value +1
-  #     File.open "./tmp/counter.txt", "w" do |counter_file|
-  #       counter_file.write new_val
-  #     end
-  # end
+  def add_one 
+    @new_val= value +1
+      File.open "./tmp/counter.txt", "w" do |counter_file|
+        counter_file.write new_val
+      end
+  end
+
   private
 
   def file_dir
@@ -27,6 +28,7 @@ end
 
 trial=  Counter.new
 puts "this is the content value #{trial.value}"
+puts "this is the incremented value#{trial.add_one}"
 
 # class Vehicule
 #   attr_reader :position
