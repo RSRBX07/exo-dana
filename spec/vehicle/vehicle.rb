@@ -14,7 +14,7 @@ attr_reader :count
   end
 
   def count
-    @count +1irb
+    @count +1
   end
 
 end
