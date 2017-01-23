@@ -1,3 +1,7 @@
+
+require "yaml"
+
+
 class Counter
 
   def value
