@@ -2,7 +2,6 @@ class Game < ApplicationRecord
 
   def add_player
     @players +=1
-
   end
 
   def remove_player
@@ -11,11 +10,6 @@ class Game < ApplicationRecord
     else
       @players 
     end
+
   end
 
-  private 
-
-  def initialize
-    @players=0
-  end
-end
