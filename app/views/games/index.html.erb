@@ -4,10 +4,11 @@
 
     <% @games.each do |game| %>
       <div>
-        <%= game.name %>
+        <%= link_to game.name, 'games_show_path' %>
       </div>
-      
     <% end %>
+
+     <%= link_to 'description', 'games_show_path' %>
 
 
 
