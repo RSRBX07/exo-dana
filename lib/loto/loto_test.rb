@@ -1,5 +1,5 @@
 
-require './loto.rb'
+require_relative '../lib/loto/loto.rb'
 
 #loto_du_samedi = Loto.new
 #2.times {loto_du_samedi.check_grid Loto.get_flash}
